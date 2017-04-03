@@ -25,16 +25,16 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
     rm nodesource_setup.sh
 
 RUN git clone https://github.com/buck06191/bcmd-web.git && \
-    cd /BCMD && \
+    cd /bcmd-web && \
     ./configure && \
     make && \
     mkdir working
 
 #set working directory to where bcmd files are
 WORKDIR /bcmd-web
+# Expose port for access web interface on local machine
 
-EXPOSE 3000
-ENV APP_SETTINGS="config.ProductionConfig"
+EXPOSE 5000
 # Install all python/node dependencies
 RUN pip install -r requirements.txt && \
     npm install && \
