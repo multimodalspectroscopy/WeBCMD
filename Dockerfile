@@ -24,19 +24,22 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
     apt-get install nodejs && \
     rm nodesource_setup.sh
 
-RUN git clone https://github.com/buck06191/bcmd-web.git /BCMD && \
+RUN git clone https://github.com/buck06191/bcmd-web.git && \
     cd /BCMD && \
     ./configure && \
     make && \
     mkdir working
 
 #set working directory to where bcmd files are
-WORKDIR /BCMD
+WORKDIR /bcmd-web
 
 EXPOSE 3000
+ENV APP_SETTINGS="config.ProductionConfig"
 # Install all python/node dependencies
 RUN pip install -r requirements.txt && \
     npm install && \
+    npm install bower -g && \
+    echo '{ "allow_root": true }' > /root/.bowerrc && \
     bower install
 
 
