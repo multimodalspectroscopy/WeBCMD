@@ -1,4 +1,4 @@
-FROM python:3.6
+FROM python:3.6.1
 MAINTAINER Joshua Russell-Buckland (joshua-russell-buckland.15@ucl.ac.uk)
 
 #RUN mkdir /bcmd
