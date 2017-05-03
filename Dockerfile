@@ -45,7 +45,8 @@ RUN pip install -r requirements.txt && \
 
 
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["python"]
+CMD ["run.py"]
 
 # TODO dockerignore file
 # TODO check directory structure and then mkdir
