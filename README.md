@@ -14,14 +14,14 @@ This version of BCMD uses Docker to wrap and distribute the software for use. Th
 Once you have done this, open terminal/Powershell/cmd and navigate to the cloned repository. Then run
 
 ```shell
-docker build -t WeBCMD:latest .
+docker build --no-cache --rm -t webcmd:latest .
 ```
 From here there are two main options:
 
 ### 1. CLI ###
 When using the command line interface, if you want save data and use data on the computer, you will need to use the 'working' directory with the following command. Any data you wish to use with the models must be stored in the `../host_data` directory. These can be individual files or child directories.
 ```shell
-docker run -it -v /home/user/path/to/host_data:/BCMD/working WeBCMD /bin/bash
+docker run -it -v /home/user/path/to/host_data:/BCMD/working webcmd /bin/bash
 ```
 ### 2. Web Interface ###
 There is also an in development web interface for WeBCMD. This does not have as many features as the command line interface, but is much more visual and may be simpler to use. Over time, new features will be rolled out and included.
@@ -29,5 +29,5 @@ There is also an in development web interface for WeBCMD. This does not have as 
 In order to run the Web Interface, you will need to ensure that you have the environment file, which can be requested from the creators. This file contains a number of variables that cannot be made publicly available in the repository. Once you have received this, you can run the interface with the following command
 
 ```shell
-docker run --env-file webcmd.env WeBCMD
+docker run -p 5000:5000 --env-file webcmd.env webcmd
 ```
