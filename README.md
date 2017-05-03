@@ -29,5 +29,5 @@ There is also an in development web interface for WeBCMD. This does not have as 
 In order to run the Web Interface, you will need to ensure that you have the environment file, which can be requested from the creators. This file contains a number of variables that cannot be made publicly available in the repository. Once you have received this, you can run the interface with the following command
 
 ```shell
-docker run --env-file webcmd.env webcmd
+docker run -p 5000:5000 --env-file webcmd.env webcmd
 ```
