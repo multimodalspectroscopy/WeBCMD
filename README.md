@@ -14,7 +14,7 @@ This version of BCMD uses Docker to wrap and distribute the software for use. Th
 Once you have done this, open terminal/Powershell/cmd and navigate to the cloned repository. Then run
 
 ```shell
-docker build -t webcmd:latest .
+docker build --no-cache --rm -t webcmd:latest .
 ```
 From here there are two main options:
 
