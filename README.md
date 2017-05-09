@@ -21,7 +21,7 @@ From here there are two main options:
 ### 1. CLI ###
 When using the command line interface, if you want save data and use data on the computer, you will need to use the 'working' directory with the following command. Any data you wish to use with the models must be stored in the `../host_data` directory. These can be individual files or child directories.
 ```shell
-docker run -it -v /home/user/path/to/host_data:/BCMD/working webcmd /bin/bash
+docker run -it -v /home/user/path/to/host_data:/BCMD/working --entrypoint /bin/bash webcmd 
 ```
 ### 2. Web Interface ###
 There is also an in development web interface for WeBCMD. This does not have as many features as the command line interface, but is much more visual and may be simpler to use. Over time, new features will be rolled out and included.
