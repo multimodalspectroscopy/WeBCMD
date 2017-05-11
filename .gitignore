@@ -1,6 +1,10 @@
 # Ignore env file
 webcmd.env
 
+# Don't upload any zip files
+*.zip
+
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
