@@ -1,0 +1,13 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    depends_on:
+      - 'db'
+    environment:
+      - APP_SETTINGS=config.DockerConfig
+      - BASEDIR=bcmd-web
+  db:
+    image: mongo:3.5
