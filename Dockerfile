@@ -27,7 +27,10 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
 RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
     echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
     apt-get update && \
-    apt-get install -y mongodb-org
+    apt-get install -y mongodb-org && \
+    echo "[Unit]\nDescription=High-performance, schema-free document-oriented database\nAfter=network.target\nDocumentation=https://docs.mongodb.org/manual\n[Service]\nUser=mongodb\nGroup=mongodb\nExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf\n[Install]\nWantedBy=multi-user.target" >>  /lib/systemd/system/mongod.service && \
+    systemctl start && \
+    systemctl status mongodb
 
 
 
