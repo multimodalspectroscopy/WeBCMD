@@ -23,6 +23,13 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
     bash nodesource_setup.sh && \
     apt-get install nodejs && \
     rm nodesource_setup.sh
+# Instal mongodb
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv EA312927 && \
+    echo "deb http://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.2 multiverse" | tee /etc/apt/sources.list.d/mongodb-org-3.2.list && \
+    apt-get update && \
+    apt-get install -y mongodb-org
+
+
 
 RUN git clone https://github.com/buck06191/bcmd-web.git && \
     cd /bcmd-web && \
