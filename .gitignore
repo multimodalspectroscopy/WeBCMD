@@ -9,7 +9,3 @@ webcmd.env
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
-
-# Ignore Dockerfile - created on the fly now
-Dockerfile
-
