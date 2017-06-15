@@ -24,7 +24,8 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
     apt-get install nodejs && \
     rm nodesource_setup.sh
 
-RUN git clone https://github.com/buck06191/bcmd-web.git && \
+RUN echo "This Dockerfile was built on ${{date}}." && \
+    git clone https://github.com/buck06191/bcmd-web.git && \
     cd /bcmd-web && \
     ./configure && \
     make && \
@@ -35,7 +36,7 @@ WORKDIR /bcmd-web
 # Expose port for access web interface on local machine
 
 EXPOSE 5000
-# Install all python/node dependencies
+# Install python requirements
 RUN pip install -r requirements.txt && \
     npm install && \
     npm install bower -g && \
