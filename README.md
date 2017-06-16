@@ -57,7 +57,15 @@ This will bring you to the WeBCMD-Admin page.
 
 Begin by compiling the required models in the appropriate tab before then uploading their information to the local MongoDB container.
 
-Return to the homepage where you can then view model information and run models.
+Return to the homepage where you can then view model information, run a Steady State Autoregulation simulation and run normal model simulations.
+
+### Steady State Simulations ###
+The BrainSignals models can be run in a steady state simulation to compare their autoregulation response. Minimum and maximum values for the input variable being considered are predefined, and there are three choices of model run:
+1. up: Min -> Max
+2. down: Max -> Min
+3. both: Min -> Max -> Min
+
+The default BrainSignals response curve is plotted for comparison.
 
 ### Running Models ###
 Running models is hopefully an intuitive process. It consists of approximately 7 steps, not all of which will be required.
