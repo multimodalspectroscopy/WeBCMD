@@ -24,7 +24,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
     apt-get install nodejs && \
     rm nodesource_setup.sh
 
-RUN echo "This Dockerfile was built on Fri 16 Jun 14:01:46 BST 2017." && \
+RUN echo "This Dockerfile was built on Fri 16 Jun 14:28:45 BST 2017." && \
     git clone https://github.com/buck06191/bcmd-web.git && \
     cd /bcmd-web && \
     ./configure && \
