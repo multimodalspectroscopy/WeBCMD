@@ -41,7 +41,9 @@ RUN pip install -r requirements.txt && \
     npm install && \
     npm install bower -g && \
     echo '{ "allow_root": true }' > /root/.bowerrc && \
-    bower install
+    bower install && \
+    make build/BrainSignals.model && \
+    make build/rc.model
 
 
 
