@@ -24,7 +24,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
     apt-get install nodejs && \
     rm nodesource_setup.sh
 
-RUN echo "This Dockerfile was built on Fri 16 Jun 14:28:45 BST 2017." && \
+RUN echo "This Dockerfile was built on Thu 22 Jun 11:33:32 BST 2017." && \
     git clone https://github.com/buck06191/bcmd-web.git && \
     cd /bcmd-web && \
     ./configure && \
@@ -41,7 +41,9 @@ RUN pip install -r requirements.txt && \
     npm install && \
     npm install bower -g && \
     echo '{ "allow_root": true }' > /root/.bowerrc && \
-    bower install
+    bower install && \
+    make build/BrainSignals.model && \
+    make build/rc.model
 
 
 
