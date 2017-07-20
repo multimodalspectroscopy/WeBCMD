@@ -1,4 +1,6 @@
-# WeBCMD
+# WeBCMD  [![DOI](https://zenodo.org/badge/87054535.svg)](https://zenodo.org/badge/latestdoi/87054535)
+
+
 
 *This repository contains the Dockerfile for the BCMD framework described below. All dependencies etc. are downloaded by the file and the required BCMD files are cloned from Github.*
 
