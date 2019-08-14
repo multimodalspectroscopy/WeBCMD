@@ -1,3 +1,4 @@
 # Ignore dockerfile creation tools
 dockerfile.template
 dockerfile_creation.sh
+*.zip
