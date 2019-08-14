@@ -24,7 +24,7 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
     apt-get install nodejs && \
     rm nodesource_setup.sh
 
-RUN echo "This Dockerfile was built on Thu  1 Nov 15:19:59 GMT 2018." && \
+RUN echo "This Dockerfile was built on Wed 14 Aug 17:13:08 BST 2019." && \
     git clone https://github.com/buck06191/bcmd-web.git && \
     cd /bcmd-web && \
     ./configure && \
@@ -44,6 +44,10 @@ RUN pip install -r requirements.txt && \
     bower install && \
     make build/BrainSignals.model && \
     make build/rc.model
+
+# Compile BSX
+RUN python bparser/bcmd.py -i examples/bsx -d build/ examples/bsx/bsx.modeldef &&\
+	make build/bsx.model
 
 
 
