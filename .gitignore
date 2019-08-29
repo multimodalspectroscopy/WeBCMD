@@ -1,6 +1,9 @@
 # Ignore env file
 webcmd.env
 
+# Ignore eb deploy script
+eb_deployer.sh
+
 # Don't upload any zip files
 *.zip
 
