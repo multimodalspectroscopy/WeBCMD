@@ -25,7 +25,10 @@ RUN curl -sL https://deb.nodesource.com/setup_6.x -o nodesource_setup.sh && \
     rm nodesource_setup.sh
 
 RUN echo "This Dockerfile was built on ${{date}}." && \
-    git clone https://github.com/buck06191/bcmd-web.git && \
+# Debugging line ->>>
+    git clone --single-branch --branch csv_debug https://github.com/buck06191/bcmd-web.git && \
+# <<<-
+#    git clone https://github.com/buck06191/bcmd-web.git && \
     cd /bcmd-web && \
     ./configure && \
     make && \
